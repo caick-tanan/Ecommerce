@@ -42,6 +42,6 @@ export class HeaderComponent implements OnInit {
       this.modalTitle.nativeElement.textContent = 'Enter Register Information';
     }
 
-    this.container.createComponent((componentType) as any);
+    this.container.createComponent(componentType);
   }
 }

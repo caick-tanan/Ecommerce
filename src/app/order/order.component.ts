@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-order',
@@ -8,7 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class OrderComponent implements OnInit {
   selectedPaymentMethodName = '1';
-  selectedPaymentMethod = new FormControl('0');
+  selectedPaymentMethod = new UntypedFormControl('0');
   constructor() { }
 
   ngOnInit(): void {
