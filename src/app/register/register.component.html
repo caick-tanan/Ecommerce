@@ -1,0 +1,42 @@
+<form>
+
+  <!-- First Name and Last Name -->
+  <div class="row mb-3">
+      <div class="col">
+          <label for="firstname" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="firstname" formControlName="firstName">
+      </div>
+    <div class="col">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastname" formControlName="lastName">
+    </div>
+  </div>
+
+   <!-- Email -->
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="email" formControlName="email">
+   </div>
+
+   <!-- Password and Repeat Password -->
+   <div class="row">
+    <div class="col mb-3">
+        <label for="pwd" class="form-label">Password</label>
+        <input type="password" class="form-control" id="pwd" formControlName="pwd">
+    </div>
+    <div class="col mb-3">
+        <label for="rpwd" class="form-label">Repeat Password</label>
+        <input type="password" class="form-control" id="rpwd" formControlName="rpwd">
+    </div>
+  </div>
+   <!-- Create Account Button -->
+   <div>
+    <button type="submit" class="d-block mx-auto btn btn-outline-primary">
+        Create Account
+    </button>
+  </div>
+
+  <div class="mt-3 text-center">
+      <h5 class="text-success">Account Created</h5>
+  </div>
+</form>
