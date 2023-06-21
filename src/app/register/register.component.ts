@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { User } from '../models/models';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-register',
@@ -9,8 +11,11 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   invaildRPWD: boolean = false;
+  message = '';
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private navigationService: NavigationService
+    ) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -31,6 +36,8 @@ export class RegisterComponent implements OnInit {
         ],
       ],
       email: ['', [Validators.required, Validators.email]],
+      address: ['', [Validators.required]],
+      mobile: ['', Validators.required],
       pwd: [
         '',
         [
@@ -43,7 +50,23 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  register() {}
+  register() {
+    let user: User = {
+      id: 0,
+      firstName: this.FirstName.value,
+      lastName: this.LastName.value,
+      email: this.Email.value,
+      address: this.Address.value,
+      mobile: this.Mobile.value,
+      password: this.PWD.value,
+      createdAt: '',
+      modifiedAt: '',
+    };
+
+    this.navigationService.registerUser(user).subscribe((res: any) => {
+      this.message = res.toString();
+    });
+  }
 
   //#region Getters
   get FirstName(): FormControl {

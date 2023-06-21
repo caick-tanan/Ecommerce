@@ -22,9 +22,9 @@ img:hover {
 
 .grid-view .description,
 .grid-view .title {
-  height: 50px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .list-view .title {
